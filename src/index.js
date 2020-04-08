@@ -20,6 +20,6 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-EditElement.install = install;
+VueEditableElement.install = install;
 
-export default EditElement;
+export default VueEditableElement;
