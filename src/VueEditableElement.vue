@@ -1,16 +1,30 @@
 <template>
 	<div class="vlabeledit">
 		<div class="vlabeledit-label" @click="onLabelClick" v-if="!edit">{{vlabel}}</div>
-		<textarea
-			type="text"
-			v-if="edit"
-			class="w-full t-input t-input-size-default t-input-status-default border block rounded p-2 bg-white vlabeledit-input"
-			v-model="label"
-			v-on:blur="updateTextBlur"
-			ref="labeledit"
-			:placeholder="vplaceholder"
-			@keyup.enter="updateTextEnter">
-		</textarea>
+		<div v-if="textarea">
+			<textarea
+				type="text"
+				v-if="edit"
+				:class="cssclass"
+				v-model="label"
+				v-on:blur="updateTextBlur"
+				ref="labeledit"
+				:placeholder="vplaceholder"
+				@keyup.enter="updateTextEnter">
+			</textarea>
+		</div>
+		<div v-else>
+			<input
+				type="text"
+				v-if="edit"
+				:class="cssclass"
+				v-model="label"
+				v-on:blur="updateTextBlur"
+				ref="labeledit"
+				:placeholder="vplaceholder"
+				@keyup.enter="updateTextEnter"
+			/>
+		</div>
 	</div>
 </template>
 <script>
@@ -27,8 +41,13 @@ export default{
 		text:String,
 		placeholder:{
 			type:String,
-			default: "Enter some text valuesas"
-		}
+			default: "Enter some text value",
+		},
+		textarea:{
+			type:Boolean,
+			default: false,
+		},
+		cssclass:[],
 	}, // parent should provide :text or :placeholder
 	methods: {
 		initText: function(){
