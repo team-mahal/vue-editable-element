@@ -67,7 +67,7 @@ export default{
 			// update the edit mode to false .. display div label text
 			this.edit = false;
 			// emit text updated callback
-			this.$emit('text-updated-blur',this.label)
+			this.$emit('textupdatedblur',this.label)
 		},
 		updateTextEnter: function(){
 			this.edit = false;

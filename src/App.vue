@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-editable-element></vue-editable-element>
+    <vue-editable-element :textarea="true" :class="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
   </div>
 </template>
 
@@ -10,7 +10,12 @@ export default {
   name: 'App',
   components: {
     VueEditableElement
-  } 
+  },
+  methods: {
+  updatetxt(d){
+  	console.log(d);
+  }
+  }
 }
 </script>
 
