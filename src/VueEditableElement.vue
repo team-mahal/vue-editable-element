@@ -1,7 +1,6 @@
 <template>
 	<div class="vlabeledit">
 		<div class="vlabeledit-label" @click="onLabelClick" v-if="!edit">{{vlabel}}</div>
-
 		<textarea
 			type="text"
 			v-if="edit"
@@ -11,13 +10,12 @@
 			ref="labeledit"
 			:placeholder="vplaceholder"
 			@keyup.enter="updateTextEnter">
-			
 		</textarea>
 	</div>
 </template>
 <script>
 export default{
-	name: 'EditElement',
+	name: 'VueEditableElement',
 	data: function(){
 		return {
 			edit: false, // define whether it is in edit mode or not
@@ -25,7 +23,13 @@ export default{
 			empty: 'Enter some text value', // empty place holder .. replace with your own localization for default
 		}
 	},
-	props: ['text','placeholder'], // parent should provide :text or :placeholder
+	props: {
+		text:String,
+		placeholder:{
+			type:String,
+			default: "Enter some text valuesas"
+		}
+	}, // parent should provide :text or :placeholder
 	methods: {
 		initText: function(){
 			if(this.text==''||this.text==undefined){

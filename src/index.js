@@ -1,9 +1,9 @@
-import EditElement from './EditElement.vue';
+import VueEditableElement from './VueEditableElement';
 
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("edit-element", EditElement);
+  Vue.component("vue-editable-element", VueEditableElement);
 }
 
 const plugin = {
