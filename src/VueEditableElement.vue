@@ -1,6 +1,6 @@
 <template>
-	<div class="vlabeledit">
-		<div class="vlabeledit-label" @click="onLabelClick" v-if="!edit">{{vlabel}}</div>
+	<div>
+		<div @click="onLabelClick" v-if="!edit">{{vlabel}}</div>
 		<div v-if="textarea">
 			<textarea
 				type="text"
@@ -8,7 +8,7 @@
 				:class="cssclass"
 				v-model="label"
 				v-on:blur="updateTextBlur"
-				ref="labeledit"
+				ref="vueeditableelement"
 				:placeholder="vplaceholder"
 				@keyup.enter="updateTextEnter">
 			</textarea>
@@ -20,7 +20,7 @@
 				:class="cssclass"
 				v-model="label"
 				v-on:blur="updateTextBlur"
-				ref="labeledit"
+				ref="vueeditableelement"
 				:placeholder="vplaceholder"
 				@keyup.enter="updateTextEnter"
 			/>
@@ -47,7 +47,10 @@ export default{
 			type:Boolean,
 			default: false,
 		},
-		cssclass:[],
+		cssclass:{
+			type:String,
+			default: '',
+		},
 	}, // parent should provide :text or :placeholder
 	methods: {
 		initText: function(){
@@ -99,7 +102,7 @@ export default{
 		this.initText();
 	},
 	updated: function(){
-		var ed = this.$refs.labeledit;
+		var ed = this.$refs.vueeditableelement;
 		if(ed!=null){
 			ed.focus();
 		}
