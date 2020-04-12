@@ -2,8 +2,16 @@
 	"name": "vue-editable-element",
 	"homepage": "https://github.com/team-mahal/vue-editable-element",
 	"main": "./dist/vueeditableelement.common.js",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"private": false,
+	"keywords": [
+	    "vue",
+	    "vuejs",
+	    "vuejs2",
+	    "vue-components",
+	    "vue-components",
+	    "vue-editable-element"
+  	],
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
