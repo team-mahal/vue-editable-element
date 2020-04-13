@@ -72,12 +72,8 @@ The component send $emmit event to update date to api:
 </template>
 
 <script>
-import VueEditableElement from '../src/VueEditableElement';
 export default {
     name: 'App',
-    components: {
-        VueEditableElement
-    },
     data: function(){
         return {
             textarea:'',
