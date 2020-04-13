@@ -52,3 +52,45 @@ The component accepts these props:
 ## Available $emmit
 The component send $emmit event to update date to api:
 ( textupdatedblur ) the emmit occer when the input date is update so you can catch data from parent component to update the data
+
+## Example
+
+<template>
+  <div id="app">
+    <vue-editable-element :text="text" :textarea="textarea=='textarea' ? true : false" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
+    <label for="">
+        Input Filed? 
+        <input type="radio" name="df" v-model="textarea" value="input">
+    </label>
+    <label for="">
+        Textarea Filed? 
+        <input type="radio" name="df" v-model="textarea" value="textarea">
+    </label>
+
+    <vue-editable-element :text="text" :textarea="textarea=='textarea' ? true : false" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
+  </div>
+</template>
+
+<script>
+import VueEditableElement from '../src/VueEditableElement';
+export default {
+    name: 'App',
+    components: {
+        VueEditableElement
+    },
+    data: function(){
+        return {
+            textarea:'',
+            text: 'Enter to edit dummy text', // empty place holder .. replace with your own localization for default
+        }
+    },
+    methods: {
+        updatetxt(d){
+            this.text = d
+            console.log(d);
+        }
+    }
+}
+</script>
+
+
