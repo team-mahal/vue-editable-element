@@ -1,32 +1,24 @@
+
+
 <template>
   <div id="app">
-    <vue-editable-element :text="text" :textarea="textarea=='textarea' ? true : false" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
-    <label for="">
-        Input Filed? 
-        <input type="radio" name="df" v-model="textarea" value="input">
-    </label>
-    <label for="">
-        Textarea Filed? 
-        <input type="radio" name="df" v-model="textarea" value="textarea">
-    </label>
-
-    <vue-editable-element :text="text" :textarea="textarea=='textarea' ? true : false" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
+    <vue-editable-element :textarea="true" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
   </div>
 </template>
+
 <script>
-export default{
-    name: 'App',
-    data: function(){
-        return {
-            textarea:'',
-            text: 'Enter to edit dummy text', // empty place holder .. replace with your own localization for default
-        }
-    },
-    methods: {
-        updatetxt(d){
-            this.text = d
-            console.log(d);
-        }
-    }
+import VueEditableElement from './VueEditableElement';
+export default {
+  name: 'App',
+  components: {
+    VueEditableElement
+  },
+  methods: {
+  updatetxt(d){
+  console.log(d);
+  }
+  }
 }
 </script>
+
+
