@@ -55,5 +55,25 @@ The component send $emmit event to update date to api:
 
 ## Example
 
-<App/>
+
+
+<template>
+  <div id="app">
+    <vue-editable-element :textarea="true" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  methods: {
+  updatetxt(d){
+  console.log(d);
+  }
+  }
+}
+</script>
+
+
+
 
