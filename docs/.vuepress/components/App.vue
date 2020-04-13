@@ -13,9 +13,8 @@
     <vue-editable-element :text="text" :textarea="textarea=='textarea' ? true : false" :cssclass="'text'" @textupdatedblur="updatetxt"></vue-editable-element>
   </div>
 </template>
-
 <script>
-export default {
+export default{
     name: 'App',
     data: function(){
         return {

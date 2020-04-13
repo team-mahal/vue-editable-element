@@ -55,5 +55,5 @@ The component send $emmit event to update date to api:
 
 ## Example
 
-<App/>
+
 
