@@ -2,7 +2,7 @@
 	"name": "vue-editable-element",
 	"homepage": "https://github.com/team-mahal/vue-editable-element",
 	"main": "./dist/vueeditableelement.common.js",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"private": false,
 	"keywords": [
 	    "vue",
@@ -37,10 +37,6 @@
 	},
 	"files": [
 		"dist/*",
-		"src/*",
-		"public/*",
-		"*.json",
-		"*.js",
-		"plugins/*"
+		"*.json"
 	]
 }
